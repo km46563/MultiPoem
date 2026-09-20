@@ -64,7 +64,7 @@ class PostReport(models.Model):
     resolved_at = models.DateTimeField(null=True, blank=True)
     reported_post = models.ForeignKey(Post, on_delete=models.SET_NULL, null=True)
     reporter = models.ForeignKey(User, on_delete=models.CASCADE, related_name='post_reports')
-    resolver = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True related_name='resolved_post_reports')
+    resolver = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='resolved_post_reports')
     
     class ReportStatus(models.TextChoices):
         PENDING = 'PENDING', 'Oczekujący'
