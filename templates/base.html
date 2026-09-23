@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      {% block title %}
+        MultiPoem
+      {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+    {% block styles %}
+    {% endblock %}
+
+  </head>
+
+  <body>
+    <header class="topbar">
+      <h1 class='page-title'>
+        {% block page_title %}
+          MultiPoem 
+        {% endblock %}
+      </h1>
+    </header>
+
+    <div class="app-layout">
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+
+          <a href="{% url='home' %}" class="sidebar-link">Strona główna</a>
+          <a href="{% url='popular' %}" class="sidebar-link">Popularne</a>
+          <a href="{% url='upload' %}" class="sidebar-link">Dodaj</a>
+          <a href="{% url='my-actions' %}" class="sidebar-link">Moje akcje</a>
+          <a href="{% url='saved-posts' %}" class="sidebar-link">Zapisane posty</a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        {% block content %}
+        {% endblock %}
+      </main>
+    </div>
+
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>

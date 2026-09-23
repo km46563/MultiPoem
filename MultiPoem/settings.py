@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mainapp'
+    'accounts',
+    'content',
+    'social',
+    'moderation',
+    'feed',
 ]
 
 MIDDLEWARE = [
@@ -136,7 +140,7 @@ MAILERS = {
 }
 
 # Abstract User 
-AUTH_USER_MODEL = 'mainapp.User'
+AUTH_USER_MODEL = 'accounts.User'
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
