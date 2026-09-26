@@ -1,0 +1,160 @@
+.auth-page,
+.auth-page * {
+    box-sizing: border-box;
+}
+
+.auth-page {
+    min-height: calc(100vh - 62px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 32px 40px;
+}
+
+
+/* CARD */
+
+.auth-card {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 36px 34px;
+
+    background: #ffffff;
+
+    border: 1px solid #ece7f0;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+
+/* HEADER */
+
+.auth-header {
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+.auth-header h2 {
+    margin: 0 0 8px;
+
+    color: #432d55;
+
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.auth-header p {
+    margin: 0;
+
+    color: #8c8594;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.auth-header a {
+    color: #46766c;
+}
+
+
+/* FORM */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-field label {
+    color: #432d55;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.form-field input {
+    width: 100%;
+    height: 40px;
+
+    padding: 0 14px;
+
+    color: #3f2d50;
+
+    font: inherit;
+    font-size: 11px;
+
+    background: #ffffff;
+
+    border: 1.5px solid #d4ccd9;
+    border-radius: 12px;
+
+    outline: none;
+    
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input:focus {
+    border-color: #5d3a78;
+    box-shadow: 0 0 0 3px rgba(93, 58, 120, 0.1);
+}
+
+.form-field input::placeholder {
+    color: #aaa2ad;
+}
+
+
+/* REGISTER BUTTON */
+
+.auth-button {
+    width: 100%;
+    height: 36px;
+
+    margin-top: 10px;
+
+    padding: 0 16px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    background: #432d55;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.auth-button:hover {
+    background: #382447;
+}
+
+/* FORM ERRORS */
+
+.errorlist {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    color: #b3261e;
+
+    font-size: 10px;
+}

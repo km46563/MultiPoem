@@ -1,9 +1,97 @@
-<h1>Logowanie</h1>
+{% extends "base.html" %}
+{% load static %}
 
-<form method="post">
-  {% csrf_token %}
 
-  {{ form.as_p }}
+{% block title %}
+    Logowanie
+{% endblock %}
 
-  <button type="submit">Zaloguj</button>
-</form>
+
+{% block page_title %}
+    Zaloguj się
+{% endblock %}
+
+
+{% block styles %}
+    <link
+        rel="stylesheet"
+        href="{% static 'accounts/auth.css' %}"
+    >
+{% endblock %}
+
+
+{% block content %}
+
+<div class="auth-page">
+
+    <section class="auth-card">
+
+        <div class="auth-header">
+
+            <h2>
+                Witaj ponownie
+            </h2>
+
+            <p>
+                Nie masz konta?
+
+                <a href="{% url 'accounts:register' %}">
+                    Zarejestruj się
+                </a>
+            </p>
+
+        </div>
+
+
+        <form method="post" class="auth-form">
+
+            {% csrf_token %}
+
+
+            {% if form.non_field_errors %}
+                <div class="form-errors">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+
+            <div class="form-field">
+
+                <label for="{{ form.username.id_for_label }}">
+                    Nazwa użytkownika
+                </label>
+
+                {{ form.username }}
+
+                {{ form.username.errors }}
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="{{ form.password.id_for_label }}">
+                    Hasło
+                </label>
+
+                {{ form.password }}
+
+                {{ form.password.errors }}
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="auth-button"
+            >
+                Zaloguj się
+            </button>
+
+        </form>
+
+    </section>
+
+</div>
+
+{% endblock %}
